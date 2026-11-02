@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@import "./tokens/tokens.css";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/source-sans-3";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme inline {
+  --font-heading: var(--font-family);
+  --font-sans: var(--font-family);
+  --font-mono: var(--font-family-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted-accent: var(--muted-accent);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-accent: var(--surface-accent);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary: var(--primary);
+  --color-brand: var(--brand);
+  --color-brand-muted: var(--brand-muted);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  /* Typography — matches Figma style names */
+  --text-display: var(--text-display-size);
+  --text-display--line-height: var(--text-display-line-height);
+  --text-heading-1: var(--text-h1-size);
+  --text-heading-1--line-height: var(--text-h1-line-height);
+  --text-heading-2: var(--text-h2-size);
+  --text-heading-2--line-height: var(--text-h2-line-height);
+  --text-heading-3: var(--text-h3-size);
+  --text-heading-3--line-height: var(--text-h3-line-height);
+  --text-heading-4: var(--text-h4-size);
+  --text-heading-4--line-height: var(--text-h4-line-height);
+  --text-paragraph-lg: var(--text-large-size);
+  --text-paragraph-lg--line-height: var(--text-large-line-height);
+  --text-paragraph: var(--text-regular-size);
+  --text-paragraph--line-height: var(--text-regular-line-height);
+  --text-paragraph-sm: var(--text-small-size);
+  --text-paragraph-sm--line-height: var(--text-small-line-height);
+  --text-paragraph-mini: var(--text-mini-size);
+  --text-paragraph-mini--line-height: var(--text-mini-line-height);
+  --text-caption: var(--text-caption-size);
+  --text-caption--line-height: var(--text-caption-line-height);
+
+  /* Letter spacing — matches Figma style names */
+  --tracking-display: var(--text-display-letter-spacing);
+  --tracking-heading-1: var(--text-h1-letter-spacing);
+  --tracking-heading-2: var(--text-h2-letter-spacing);
+  --tracking-heading-3: var(--text-h3-letter-spacing);
+  --tracking-heading-4: var(--text-h4-letter-spacing);
+  --tracking-caption: var(--text-caption-letter-spacing);
+
+  /* Icon sizes — maps to utilities like size-icon-sm, size-icon-lg, etc. */
+  --size-icon-sm: var(--icon-sm);
+  --size-icon-md: var(--icon-md);
+  --size-icon-default: var(--icon-default);
+  --size-icon-lg: var(--icon-lg);
+  --size-icon-xl: var(--icon-xl);
+
+  /* Component sizes — maps to h-component-md, size-component-lg, etc. */
+  --spacing-component-xs: var(--component-xs);
+  --spacing-component-sm: var(--component-sm);
+  --spacing-component-md: var(--component-md);
+  --spacing-component-lg: var(--component-lg);
+  --spacing-component-xl: var(--component-xl);
+  --size-component-xs: var(--component-xs);
+  --size-component-sm: var(--component-sm);
+  --size-component-md: var(--component-md);
+  --size-component-lg: var(--component-lg);
+  --size-component-xl: var(--component-xl);
+
+  /* Spacing — maps to utilities like gap-xs, p-sm, m-md, etc. */
+  --spacing-3xs: var(--ds-spacing-3xs);
+  --spacing-2xs: var(--ds-spacing-2xs);
+  --spacing-xs: var(--ds-spacing-xs);
+  --spacing-sm: var(--ds-spacing-sm);
+  --spacing-md: var(--ds-spacing-md);
+  --spacing-lg: var(--ds-spacing-lg);
+  --spacing-xl: var(--ds-spacing-xl);
+  --spacing-2xl: var(--ds-spacing-2xl);
+  --spacing-3xl: var(--ds-spacing-3xl);
+  --spacing-4xl: var(--ds-spacing-4xl);
+  --spacing-5xl: var(--ds-spacing-5xl);
+  --spacing-6xl: var(--ds-spacing-6xl);
+  --spacing-7xl: var(--ds-spacing-7xl);
+  --spacing-8xl: var(--ds-spacing-8xl);
+  --spacing-9xl: var(--ds-spacing-9xl);
+  --spacing-10xl: var(--ds-spacing-10xl);
+
+  /* Border radii — maps to utilities like rounded-sm, rounded-lg, etc. */
+  --radius-none: var(--ds-radius-none);
+  --radius-sm: var(--ds-radius-sm);
+  --radius-md: var(--ds-radius-md);
+  --radius-lg: var(--ds-radius-lg);
+  --radius-xl: var(--ds-radius-xl);
+  --radius-2xl: var(--ds-radius-2xl);
+  --radius-3xl: var(--ds-radius-3xl);
+  --radius-4xl: var(--ds-radius-4xl);
+  --radius-full: var(--ds-radius-full);
+
+  /* Shadows — maps to utilities like shadow-sm, shadow-md, etc. */
+  --shadow-2xs: var(--ds-shadow-2xs);
+  --shadow-xs: var(--ds-shadow-xs);
+  --shadow-sm: var(--ds-shadow-sm);
+  --shadow-md: var(--ds-shadow-md);
+  --shadow-lg: var(--ds-shadow-lg);
+  --shadow-xl: var(--ds-shadow-xl);
+  --shadow-2xl: var(--ds-shadow-2xl);
+
+  /* Motion durations — maps to utilities like duration-fast, duration-normal, etc. */
+  --duration-instant: var(--duration-instant);
+  --duration-fast: var(--duration-fast);
+  --duration-normal: var(--duration-normal);
+  --duration-slow: var(--duration-slow);
+  --duration-slower: var(--duration-slower);
+
+  /* Motion easings — maps to utilities like ease-default, ease-in, etc. */
+  --ease-default: var(--ease-default);
+  --ease-in: var(--ease-in);
+  --ease-out: var(--ease-out);
+  --ease-in-out: var(--ease-in-out);
+}
+
+:root {
+  --chart-1: #93C5FD;
+  --chart-2: #3B82F6;
+  --chart-3: #2563EB;
+  --chart-4: #1D4ED8;
+  --chart-5: #1E40AF;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-enter {
+  animation: card-enter var(--duration-fast) var(--ease-out) both;
+}
