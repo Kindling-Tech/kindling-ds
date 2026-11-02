@@ -2,6 +2,9 @@
   "name": "@kindling/ds",
   "version": "0.1.0",
   "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
   "exports": {
     "./tokens/tokens.css": "./tokens/tokens.css",
     "./index.css": "./index.css",
@@ -14,6 +17,8 @@
     "components",
     "hooks",
     "lib",
+    "skills",
+    "scripts",
     "index.css"
   ],
   "dependencies": {
