@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 
 const toggleVariants = cva(
-  "group/toggle inline-flex items-center justify-center gap-2xs rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 aria-pressed:bg-muted data-[state=on]:bg-muted dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/toggle inline-flex items-center justify-center gap-2xs rounded-md text-paragraph-sm font-medium whitespace-nowrap transition-all outline-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 aria-pressed:bg-muted data-[state=on]:bg-muted dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-icon-sm",
   {
     variants: {
       variant: {
@@ -12,9 +12,9 @@ const toggleVariants = cva(
       },
       size: {
         default:
-          "h-8 min-w-8 px-sm has-data-[icon=inline-end]:pr-xs has-data-[icon=inline-start]:pl-xs",
-        sm: "h-7 min-w-7 rounded-md px-sm text-[0.8rem] has-data-[icon=inline-end]:pr-xs has-data-[icon=inline-start]:pl-xs [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-9 min-w-9 px-sm has-data-[icon=inline-end]:pr-xs has-data-[icon=inline-start]:pl-xs",
+          "h-component-md min-w-component-md px-sm has-data-[icon=inline-end]:pr-xs has-data-[icon=inline-start]:pl-xs",
+        sm: "h-component-sm min-w-component-sm rounded-md px-sm text-paragraph-mini has-data-[icon=inline-end]:pr-xs has-data-[icon=inline-start]:pl-xs [&_svg:not([class*='size-'])]:size-icon-sm",
+        lg: "h-component-lg min-w-component-lg px-sm has-data-[icon=inline-end]:pr-xs has-data-[icon=inline-start]:pl-xs",
       },
     },
     defaultVariants: {
