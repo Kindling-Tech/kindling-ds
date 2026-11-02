@@ -92,4 +92,3 @@ Both Base UI and Radix can coexist during the transition.
 | Tokens, components, motion | This repo (`@kindling/ds`) | Single source of truth |
 | Design screens, prototypes | `design` repo | Consumes `@kindling/ds` |
 | Production screens | `react-app-2` repo | Consumes `@kindling/ds` |
-| Design skills (`/design-summary`, `/design-lint`, `/design-diff`) | Each repo's `.claude/skills/` | Duplicated, not shared via this package |
