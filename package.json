@@ -12,6 +12,7 @@
   "files": [
     "tokens",
     "components",
+    "hooks",
     "lib",
     "index.css"
   ],
