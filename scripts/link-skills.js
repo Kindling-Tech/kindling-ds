@@ -4,7 +4,8 @@
  * Symlinks design skills from @kindling/ds into the consuming repo's
  * .claude/skills/ directory so they appear as slash commands in Claude Code.
  *
- * Runs automatically via npm postinstall.
+ * Run manually: npx @kindling/ds link-skills
+ * Or via npm script: npm run link-skills (from within kindling-ds)
  */
 
 import { existsSync, mkdirSync, symlinkSync, unlinkSync, lstatSync, readdirSync } from 'fs';

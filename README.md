@@ -54,13 +54,24 @@ import { fadeUp, transition, duration, ease } from '@kindling/ds/lib/motion'
 @import "@kindling/ds/index.css";
 ```
 
+## Claude skills
+
+Design skills (design-diff, design-lint, design-summary) ship with the package but are **not installed automatically**. To symlink them into your repo's `.claude/skills/`:
+
+```bash
+npx kindling-link-skills
+```
+
+Run this once after install, or whenever the skills update.
+
 ## Prerequisites
 
 Consuming repos must have:
 
 - **Tailwind CSS v4** — the token mapping uses `@theme inline` which is v4 only
 - **React 19** — components use React 19 APIs
-- **Framer Motion ^14** — motion presets target this version
+- **Framer Motion >=11** (or `motion` >=11) — used by image-gallery component
+- **Lucide React >=0.400** — icons used across components
 
 ## Versioning
 

@@ -2,13 +2,16 @@
   "name": "@kindling/ds",
   "version": "0.1.0",
   "type": "module",
+  "bin": {
+    "kindling-link-skills": "scripts/link-skills.js"
+  },
   "scripts": {
-    "postinstall": "node scripts/postinstall.js"
+    "link-skills": "node scripts/link-skills.js"
   },
   "exports": {
     "./tokens/tokens.css": "./tokens/tokens.css",
     "./index.css": "./index.css",
-    "./components/ui/*": "./components/ui/*",
+    "./components/ui/*.tsx": "./components/ui/*.tsx",
     "./lib/motion": "./lib/motion.ts",
     "./lib/utils": "./lib/utils.ts"
   },
@@ -23,19 +26,23 @@
   ],
   "dependencies": {
     "@base-ui/react": "^1.8.0",
+    "@fontsource-variable/source-sans-3": "^5.0.0",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.4.0",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.5.0",
+    "next-themes": "^0.4.0",
     "react-day-picker": "^10.0.2",
-    "react-resizable-panels": "^4.14.3"
+    "react-resizable-panels": "^4.14.3",
+    "shadcn": "^4.0.0",
+    "tw-animate-css": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "framer-motion": "^14.0.0",
-    "lucide-react": "^1.0.0",
+    "framer-motion": ">=11.0.0",
+    "lucide-react": ">=0.400.0",
     "sonner": "^2.0.0",
     "tailwindcss": "^4.0.0"
   }
