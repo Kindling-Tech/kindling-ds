@@ -15,10 +15,21 @@ A screen file path relative to the project root, passed as an argument:
 /design-summary src/screens/HomeScreen.tsx
 ```
 
+## Resolving design system paths
+
+The tokens and components live in `@kindling/ds`. Where those files are on disk depends on which repo you're in:
+
+| Repo | Tokens | Theme mapping | Components |
+|------|--------|---------------|------------|
+| `design` | `src/tokens/tokens.css` (symlinked from DS) | `src/index.css` | `node_modules/@kindling/ds/components/ui/` |
+| Any consuming repo (`react-app-2`, etc.) | `node_modules/@kindling/ds/tokens/tokens.css` | `node_modules/@kindling/ds/index.css` | `node_modules/@kindling/ds/components/ui/` |
+
+To detect which case you're in: check whether `src/tokens/tokens.css` exists. If it does, you're in the design repo. If not, read from `node_modules/@kindling/ds/`.
+
 ## Process
 
 1. Read the screen file in full.
-2. Identify all imported components, tokens, and assets.
+2. Resolve the design system paths (see above), then identify all imported components, tokens, and assets.
 3. Read any imported local components or utilities referenced by the screen (not library components — only project-level abstractions used in the screen).
 4. Work through each category below in order. Every category is mandatory — if a category has no entries, output "None" for that category.
 5. Output the full spec as structured tables.

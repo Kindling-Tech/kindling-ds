@@ -17,11 +17,22 @@ Two file paths — the design screen and the production screen(s):
 
 The first path is the design source of truth. The second is the production file (or files) to compare against. The production path can be absolute or relative. Multiple production files can be provided if the feature spans several components.
 
+## Resolving design system paths
+
+The tokens and components live in `@kindling/ds`. Where those files are on disk depends on which repo you're in:
+
+| Repo | Tokens | Theme mapping | Components |
+|------|--------|---------------|------------|
+| `design` | `src/tokens/tokens.css` (symlinked from DS) | `src/index.css` | `node_modules/@kindling/ds/components/ui/` |
+| Any consuming repo (`react-app-2`, etc.) | `node_modules/@kindling/ds/tokens/tokens.css` | `node_modules/@kindling/ds/index.css` | `node_modules/@kindling/ds/components/ui/` |
+
+To detect which case you're in: check whether `src/tokens/tokens.css` exists. If it does, you're in the design repo. If not, read from `node_modules/@kindling/ds/`.
+
 ## Process
 
 1. Read the design screen file in full.
 2. Read the production screen file(s) in full.
-3. Read the project's design tokens and component files as needed to resolve token values and understand component base styles.
+3. Resolve the design system paths (see above), then read tokens and component files as needed to resolve token values and understand component base styles.
 4. For each of the 10 categories, compare the design against production and identify every difference.
 5. Output the full report in the format below.
 

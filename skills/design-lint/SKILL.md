@@ -15,10 +15,21 @@ A screen file path relative to the project root:
 /design-lint src/screens/HomeScreen.tsx
 ```
 
+## Resolving design system paths
+
+The tokens and components live in `@kindling/ds`. Where those files are on disk depends on which repo you're in:
+
+| Repo | Tokens | Theme mapping | Components |
+|------|--------|---------------|------------|
+| `design` | `src/tokens/tokens.css` (symlinked from DS) | `src/index.css` | `node_modules/@kindling/ds/components/ui/` |
+| Any consuming repo (`react-app-2`, etc.) | `node_modules/@kindling/ds/tokens/tokens.css` | `node_modules/@kindling/ds/index.css` | `node_modules/@kindling/ds/components/ui/` |
+
+To detect which case you're in: check whether `src/tokens/tokens.css` exists. If it does, you're in the design repo. If not, read from `node_modules/@kindling/ds/`.
+
 ## Process
 
 1. Read the screen file in full.
-2. Read the project's design tokens (`src/tokens/tokens.css`) and theme mapping (`src/index.css`) to know what tokens exist.
+2. Resolve the design system paths (see above), then read the design tokens and theme mapping to know what tokens exist.
 3. Read any component files used by the screen to understand their base styles, variants, and sizes.
 4. Work through each check below in order. Every check is mandatory.
 5. Output violations grouped by severity.
