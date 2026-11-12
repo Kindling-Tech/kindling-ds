@@ -11,7 +11,7 @@
   "exports": {
     "./tokens/tokens.css": "./tokens/tokens.css",
     "./index.css": "./index.css",
-    "./components/ui/*.tsx": "./components/ui/*.tsx",
+    "./components/ui/*": "./components/ui/*.tsx",
     "./lib/motion": "./lib/motion.ts",
     "./lib/utils": "./lib/utils.ts"
   },
