@@ -25,6 +25,20 @@ export const cn = createCn({
           ],
         },
       ],
+      "text-color": [
+        {
+          text: [
+            "foreground",
+            "primary-foreground",
+            "secondary-foreground",
+            "muted-foreground",
+            "accent-foreground",
+            "card-foreground",
+            "popover-foreground",
+            "destructive",
+          ],
+        },
+      ],
     },
   },
 })
