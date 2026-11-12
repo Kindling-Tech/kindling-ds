@@ -1,5 +1,5 @@
 import * as React from "react"
-import { cn } from "cn"
+import { cn } from "../../lib/utils"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Plus } from "lucide-react"
 import { Dropzone } from "./dropzone"
