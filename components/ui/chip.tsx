@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "../../lib/utils"
 
 const chipVariants = cva(
-  "inline-flex shrink-0 items-center justify-center rounded-full border border-transparent text-sm font-medium whitespace-nowrap transition-colors duration-fast ease-default outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 items-center justify-center border border-transparent text-sm font-medium whitespace-nowrap transition-colors duration-fast ease-default outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
@@ -17,10 +17,15 @@ const chipVariants = cva(
         sm: "h-7 gap-xs px-sm text-[0.8rem]",
         lg: "h-9 gap-xs px-lg",
       },
+      rounded: {
+        full: "rounded-full",
+        md: "rounded-md",
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      rounded: "full",
     },
   }
 )
@@ -29,12 +34,13 @@ function Chip({
   className,
   variant = "default",
   size = "default",
+  rounded = "full",
   ...props
 }: ButtonPrimitive.Props & VariantProps<typeof chipVariants>) {
   return (
     <ButtonPrimitive
       data-slot="chip"
-      className={cn(chipVariants({ variant, size, className }))}
+      className={cn(chipVariants({ variant, size, rounded, className }))}
       {...props}
     />
   )
